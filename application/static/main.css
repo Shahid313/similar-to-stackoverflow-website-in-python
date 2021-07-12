@@ -1,0 +1,257 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-bar{
+    width: 100%;
+    height: 80px;
+    background-color: #F48024;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	box-shadow: 1px 1px 7px gray;
+}
+
+.nav-bar a{
+    color: #fff;
+    text-decoration: none;
+    
+}
+
+.paralinks{
+    margin-left: 25px;
+}
+
+.links{
+    margin-right: 500px;
+}
+
+.textarea-field{
+    box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border: 1px solid #C2C2C2;
+	box-shadow: 1px 1px 4px #EBEBEB;
+	-moz-box-shadow: 1px 1px 4px #EBEBEB;
+	-webkit-box-shadow: 1px 1px 4px #EBEBEB;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 7px;
+
+	outline: none;
+}
+
+.textarea-field:focus{
+    border: 1px solid #F48024;
+}
+
+.textarea-field{
+	height:220px;
+	width: 60%;
+}
+
+.quest-form{
+    margin-left: 20%;
+    margin-top: 20px;
+}
+.button{
+    border: none;
+	padding: 8px 15px 8px 15px;
+	background: #FF8500;
+	color: #fff;
+	box-shadow: 1px 1px 4px #DADADA;
+	-moz-box-shadow: 1px 1px 4px #DADADA;
+	-webkit-box-shadow: 1px 1px 4px #DADADA;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+    margin-left: 550px;
+}
+
+.button:hover{
+    background: #EA7B00;
+	color: #fff;
+}
+
+.profile{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top:15px;
+}
+
+.profileImage{
+	background-color: #F48024;
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+}
+
+.ProfileButton{
+	border: none;
+	padding: 8px 15px 8px 15px;
+	background: #FF8500;
+	color: #fff;
+	box-shadow: 1px 1px 4px #DADADA;
+	-moz-box-shadow: 1px 1px 4px #DADADA;
+	-webkit-box-shadow: 1px 1px 4px #DADADA;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+.ProfileButton:hover{
+    background: #EA7B00;
+	color: #fff;
+}
+
+.post{
+	width: 48%;
+	background-color: #fff;
+	margin-left: 20%;
+	margin-top: 45px;
+	box-shadow: 1px 1px 7px gray;
+}
+
+.post-image{
+	height: 35px;
+	width: 35px;
+	border-radius:50%;
+	object-fit:cover;
+	margin-left: 5px;
+}
+
+.user{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.post-content{
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-bottom: 5px;
+	margin-top: -1;
+}
+
+.reply-image{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-left: 5px;
+}
+
+.reply{
+	width: 42.8%;
+	margin-left: 25%;
+	
+}
+
+.replier{
+	display: flex;
+	align-items: center;
+	
+}
+
+.replier-name{
+	margin-left: 5;
+	color: #F48024;
+}
+
+.reply-field{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border: 1px solid #C2C2C2;
+	box-shadow: 1px 1px 4px #EBEBEB;
+	-moz-box-shadow: 1px 1px 4px #EBEBEB;
+	-webkit-box-shadow: 1px 1px 4px #EBEBEB;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 7px;
+
+	outline: none;
+}
+
+.reply-field{
+	height:100px;
+	width: 542px;
+}
+
+.reply-field:focus{
+    border: 1px solid #F48024;
+}
+
+.reply-button{
+	border: none;
+	padding: 8px 15px 8px 15px;
+	background: #FF8500;
+	color: #fff;
+	box-shadow: 1px 1px 4px #DADADA;
+	-moz-box-shadow: 1px 1px 4px #DADADA;
+	-webkit-box-shadow: 1px 1px 4px #DADADA;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+.reply-button:hover{
+    background: #EA7B00;
+	color: #fff;
+}
+
+.answer{
+	width: 542px;
+	margin-left: 25%;
+	box-shadow: 1px 1px 7px gray;
+}
+
+.answer-user{
+	display: flex;
+	align-items: center;
+	margin-left: 5px;
+}
+
+.answerer{
+	margin-left: 5px;
+	color: #EA7B00;
+
+}
+
+.reply-content{
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: -1px;
+	padding-bottom: 5px;
+}
+
+.title-field{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border: 1px solid #C2C2C2;
+	box-shadow: 1px 1px 4px #EBEBEB;
+	-moz-box-shadow: 1px 1px 4px #EBEBEB;
+	-webkit-box-shadow: 1px 1px 4px #EBEBEB;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 7px;
+
+	outline: none;
+}
+
+.title-field:focus{
+    border: 1px solid #F48024;
+}
+
+.title-field{
+	height:50px;
+	width: 60%;
+}

@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    </head>
+    <body>
+        <div class="nav-bar">
+            <div class="links">
+            <a href="{{url_for('PostView:home')}}">Home</a>
+            {% if current_user.is_authenticated %}
+            <a href="{{url_for('UserView:logout')}}" class="paralinks">Logout</a>
+            <a href="{{url_for('UserView:profile')}}" class="paralinks">Profile</a>
+            {% else %}
+            <a href="{{url_for('UserView:login')}}" class="paralinks">Login</a>
+            <a href="{{url_for('UserView:signup')}}" class="paralinks">Register</a>
+            {% endif %}
+           </div>
+           {% if current_user.is_authenticated %}
+           <img style="height: 35px; width: 35px; border-radius:50%; border: 1px solid #fff; object-fit:cover; margin-left:10px;" 
+           src="{{url_for('static', filename='user_images/')}}{{current_user.user_image}}">
+           {% endif %}
+        </div>
+        {% if current_user.is_authenticated %}
+        <form class="quest-form" method="POST" action="{{url_for('PostView:post_question')}}">
+        <input type="text" name="title" class="title-field" placeholder="Enter the question title"><br><br>
+        <textarea name="question" class="textarea-field" placeholder="Write your question here..."></textarea><br><br>
+        <input class="button" type="submit" value="Post" name="" />
+        </form>
+        {% endif %}
+        
+        {% for post in posts_res %}
+        <div class="post">
+            <div class="user">
+            <img class="post-image" src="{{url_for('static', filename='user_images/')}}{{post['post_data'].user_image}}">
+            <p style="margin-left: 5px; color: #F48024; font-weight: bold;">{{post['post_data'].username}} <span style="color: black;">Asked</span></p>
+            </div>
+            <h3 style="margin-left: 5px;">{{post['post_data'].post_title}}</h3>
+            <p class="post-content">{{post['post_data'].content}}</p>
+            <p style="margin-left: 5px; color: #F48024;padding-bottom: 5px;">{{post['post_data'].post_date}}</p>
+        </div>
+        {% for reply in post['post_replies'] %}
+        <div class="answer">
+            <div class="answer-user">
+            <img style="width:30px; height: 30px; border-radius: 50%; object-fit: cover;" src="{{url_for('static', filename='user_images/')}}{{reply.user_image}}"/>
+            <p class="answerer">{{reply.username}} <span style="color: black;">Replied</span></p>
+            </div>
+            <p class="reply-content">{{reply.reply_body}}</p>
+        </div>
+        {% endfor %}
+        {% if current_user.is_authenticated %}
+        <div class="reply">
+            <div class="replier">
+           <img class="reply-image" src="{{url_for('static', filename='user_images/')}}{{current_user.user_image}}">
+           <p class="replier-name">{{current_user.username}}</p>
+           </div>
+           <form action="{{url_for('PostView:reply', id=post['post_data'].post_id)}}" method="POST">
+           <textarea name="question-reply" class="reply-field" placeholder="Reply..."></textarea><br><br>
+            <input class="reply-button" type="submit" value="Reply" name="" />
+           </form>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </body>
+</html>
